@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+<body>
+    <script>
+        
+        
+    function getComputerChoice (compChoice) {
+        
+        let returnComputer = Math.floor(Math.random() * 3) + 1;
+
+        if (returnComputer == 1) {
+            compChoice = "rock";
+        } else if (returnComputer == 2) {
+            compChoice = "paper";
+        } else {
+            compChoice ="scissors";
+        }
+        return compChoice;
+    }
+
+    function getHumanChoice (humChoice) {
+        
+        let humAnswer = prompt("Rock, Paper, Scissors? (If there is a typo, it assumes Scissors");
+            
+        if (humAnswer.toLowerCase() == "rock") {
+            humChoice = "rock";
+        } else if (humAnswer.toLowerCase() == "paper") {
+            humChoice = "paper";
+        } else {
+            humChoice = "scissors";
+        }
+        return humChoice;
+        
+    }
+
+    let humScore = 0;
+    let compScore = 0;    
+
+    function playRound (humChoice, compChoice) {
+
+    }
+
+
+
+    </script>
+</body>
+</html>
