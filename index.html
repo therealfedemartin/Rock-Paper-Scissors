@@ -26,11 +26,11 @@
 
     function getHumanChoice (humChoice) {
         
-        let humAnswer = prompt("Rock, Paper, Scissors? (If there is a typo, it assumes Scissors");
-            
-        if (humAnswer.toLowerCase() == "rock") {
+        let humAnswer = prompt("Rock, Paper, Scissors? (If there is a typo, it assumes Scissors").toLowerCase();
+        
+        if (humAnswer == "rock") {
             humChoice = "rock";
-        } else if (humAnswer.toLowerCase() == "paper") {
+        } else if (humAnswer == "paper") {
             humChoice = "paper";
         } else {
             humChoice = "scissors";
@@ -42,12 +42,47 @@
     let humScore = 0;
     let compScore = 0;    
 
-    function playRound (humChoice, compChoice) {
-
+    function playRound (hChoice,cChoice) {
+                
+        let gameresult;
+        
+        if (hChoice == "rock" && cChoice == "rock") {
+            gameresult = 0;
+            alert("Empate: " + hChoice + " vs " + cChoice);
+        } else if (hChoice == "paper" && cChoice == "paper") {
+            gameresult = 0;
+            alert("Empate: " + hChoice + " vs " + cChoice);
+        } else if (hChoice == "scissors" && cChoice == "scissors"){
+            gameresult = 0;
+            alert("Empate: " + hChoice + " vs " + cChoice);
+        } else if (hChoice == "rock" && cChoice == "paper"){
+            gameresult = 1;
+            alert("Perdiste: " + hChoice + " vs " + cChoice);
+        } else if (hChoice == "rock" && cChoice == "scissors"){
+            gameresult = 2;
+            alert("Ganaste: " + hChoice + " vs " + cChoice);
+        } else if (hChoice == "paper" && cChoice == "rock"){
+            gameresult = 2;
+            alert("Ganaste: " + hChoice + " vs " + cChoice);
+        } else if (hChoice == "paper" && cChoice == "scissors"){
+            gameresult = 1;
+            alert("Perdiste: " + hChoice + " vs " + cChoice);
+        } else if (hChoice == "scissors" && cChoice == "rock"){
+            gameresult = 1;
+            alert("Perdiste: " + hChoice + " vs " + cChoice);
+        } else if (hChoice == "scissors" && cChoice == "paper"){
+            gameresult = 2;
+            alert("Ganaste: " + hChoice + " vs " + cChoice);
+        }
     }
+    
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
 
 
-
+ 
     </script>
 </body>
 </html>
