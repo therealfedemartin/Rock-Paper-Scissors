@@ -26,7 +26,7 @@
 
     function getHumanChoice (humChoice) {
         
-        let humAnswer = prompt("Rock, Paper, Scissors? (If there is a typo, it assumes Scissors").toLowerCase();
+        let humAnswer = prompt("Rock, Paper, Scissors? ").toLowerCase();
         
         if (humAnswer == "rock") {
             humChoice = "rock";
@@ -38,50 +38,71 @@
         return humChoice;
         
     }
-
-    let humScore = 0;
-    let compScore = 0;    
-
-    function playRound (hChoice,cChoice) {
-                
-        let gameresult;
-        
-        if (hChoice == "rock" && cChoice == "rock") {
-            gameresult = 0;
-            alert("Empate: " + hChoice + " vs " + cChoice);
-        } else if (hChoice == "paper" && cChoice == "paper") {
-            gameresult = 0;
-            alert("Empate: " + hChoice + " vs " + cChoice);
-        } else if (hChoice == "scissors" && cChoice == "scissors"){
-            gameresult = 0;
-            alert("Empate: " + hChoice + " vs " + cChoice);
-        } else if (hChoice == "rock" && cChoice == "paper"){
-            gameresult = 1;
-            alert("Perdiste: " + hChoice + " vs " + cChoice);
-        } else if (hChoice == "rock" && cChoice == "scissors"){
-            gameresult = 2;
-            alert("Ganaste: " + hChoice + " vs " + cChoice);
-        } else if (hChoice == "paper" && cChoice == "rock"){
-            gameresult = 2;
-            alert("Ganaste: " + hChoice + " vs " + cChoice);
-        } else if (hChoice == "paper" && cChoice == "scissors"){
-            gameresult = 1;
-            alert("Perdiste: " + hChoice + " vs " + cChoice);
-        } else if (hChoice == "scissors" && cChoice == "rock"){
-            gameresult = 1;
-            alert("Perdiste: " + hChoice + " vs " + cChoice);
-        } else if (hChoice == "scissors" && cChoice == "paper"){
-            gameresult = 2;
-            alert("Ganaste: " + hChoice + " vs " + cChoice);
-        }
-    }
+   
+     
     
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+    function playGame(){
+    let humScore = 0;
+    let compScore = 0;  
 
-    playRound(humanSelection, computerSelection);
+        let rounds= 0;
+        while (rounds < 5) {
+    
+        function playRound (hChoice,cChoice) {
+                
+            if (hChoice == "rock" && cChoice == "rock") {
 
+            alert("Empate: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
+            } else if (hChoice == "paper" && cChoice == "paper") {
+     
+            alert("Empate: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
+            } else if (hChoice == "scissors" && cChoice == "scissors"){
+   
+            alert("Empate: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
+            } else if (hChoice == "rock" && cChoice == "paper"){
+   
+            compScore++;
+            alert("Perdiste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
+            } else if (hChoice == "rock" && cChoice == "scissors"){
+    
+            humScore++;
+            alert("Ganaste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
+            } else if (hChoice == "paper" && cChoice == "rock"){
 
+            humScore++;
+            alert("Ganaste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
+            } else if (hChoice == "paper" && cChoice == "scissors"){
+         
+            compScore++;
+            alert("Perdiste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
+            } else if (hChoice == "scissors" && cChoice == "rock"){
+           
+            compScore++;
+            alert("Perdiste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
+            } else {
+            //else if (hChoice == "scissors" && cChoice == "paper")    
+            humScore++;
+            alert("Ganaste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
+            }
+
+        }
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+        
+        rounds++;
+        } 
+    
+        if (humScore > compScore) {
+            alert("You win! " + humScore + " vs " + compScore);
+        } else if (humScore < compScore) {
+            alert("You loss! " + humScore + " vs " + compScore);
+        } else {
+            alert("It's a tie " + humScore + " vs " + compScore);
+        }
+
+    }
  
     </script>
 </body>
