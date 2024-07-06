@@ -1,109 +1,45 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Rock Paper Scissor</title>
+        <link rel="stylesheet" href="style.css">
+
     </head>
 <body>
-    <script>
-        
-        
-    function getComputerChoice (compChoice) {
-        
-        let returnComputer = Math.floor(Math.random() * 3) + 1;
-
-        if (returnComputer == 1) {
-            compChoice = "rock";
-        } else if (returnComputer == 2) {
-            compChoice = "paper";
-        } else {
-            compChoice ="scissors";
-        }
-        return compChoice;
-    }
-
-    function getHumanChoice (humChoice) {
-        
-        let humAnswer = prompt("Rock, Paper, Scissors? ").toLowerCase();
-        
-        if (humAnswer == "rock") {
-            humChoice = "rock";
-        } else if (humAnswer == "paper") {
-            humChoice = "paper";
-        } else {
-            humChoice = "scissors";
-        }
-        return humChoice;
-        
-    }
-   
-     
     
-    function playGame(){
-    let humScore = 0;
-    let compScore = 0;  
-
-        let rounds= 0;
-        while (rounds < 5) {
-    
-        function playRound (hChoice,cChoice) {
-                
-            if (hChoice == "rock" && cChoice == "rock") {
-
-            alert("Empate: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
-            } else if (hChoice == "paper" && cChoice == "paper") {
-     
-            alert("Empate: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
-            } else if (hChoice == "scissors" && cChoice == "scissors"){
-   
-            alert("Empate: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
-            } else if (hChoice == "rock" && cChoice == "paper"){
-   
-            compScore++;
-            alert("Perdiste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
-            } else if (hChoice == "rock" && cChoice == "scissors"){
-    
-            humScore++;
-            alert("Ganaste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
-            } else if (hChoice == "paper" && cChoice == "rock"){
-
-            humScore++;
-            alert("Ganaste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
-            } else if (hChoice == "paper" && cChoice == "scissors"){
-         
-            compScore++;
-            alert("Perdiste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
-            } else if (hChoice == "scissors" && cChoice == "rock"){
-           
-            compScore++;
-            alert("Perdiste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
-            } else {
-            //else if (hChoice == "scissors" && cChoice == "paper")    
-            humScore++;
-            alert("Ganaste: " + hChoice + " vs " + cChoice + " || " + humScore + " vs " + compScore);
-            }
-
-        }
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-
-        playRound(humanSelection, computerSelection);
+    <div id="mainGroup">
+        <h2>Press a button to Start Playing!</h2>
         
-        rounds++;
-        } 
-    
-        if (humScore > compScore) {
-            alert("You win! " + humScore + " vs " + compScore);
-        } else if (humScore < compScore) {
-            alert("You loss! " + humScore + " vs " + compScore);
-        } else {
-            alert("It's a tie " + humScore + " vs " + compScore);
-        }
+        <div id="groupResult">
+            <div id="groupHuman">
+                <p>
+                    Human Score is  <div id="scoreHuman"></div>
+                </p>
+            </div>
+            <div id="groupComputer">
+                <p>
+                    Computer score is  <div id="scoreComputer"></div>
+                </p>
+            </div>
+        </div>
 
-    }
- 
-    </script>
+        <div>
+            <p id="partida"></p>
+        </div>
+        
+        <div id="container">
+            <button id="buttonRock">Rock</button>
+            <button id="buttonPaper">Paper</button>
+            <button id="buttonScissors">Scissors</button>
+        </div>
+    </div>
+    
+    
+    
+    <script src="javascript.js"></script>
+
 </body>
 </html>
